@@ -43,6 +43,7 @@ GEM
     erubis (2.7.0)
     eventmachine (1.0.7)
     execjs (2.3.0)
+    hashie (3.4.0)
     hike (1.2.3)
     i18n (0.7.0)
     jbuilder (2.2.8)
@@ -132,6 +133,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord-postgis-adapter
   debugger
+  hashie
   jbuilder (~> 2.0)
   jquery-rails
   pg
