@@ -1,0 +1,145 @@
+span.clear {
+  display: block;
+  clear: both;
+}
+
+html,
+body {
+  margin:0;
+  padding:0;
+  height:100%;
+
+  font-family: Helvetica, Arial, sans-serif;
+  width: 320px;
+}
+#container {
+  min-height:100%;
+  position:relative;
+}
+#header {
+  background:#f3f3f3;
+  padding:10px;
+  h1 {
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;
+  }
+}
+#body {
+  padding-top: 40px;
+  padding-bottom:120px;   /* Height of the footer */
+
+  #compass {
+    width: 320px;
+    height: 330px;
+    background: image-url('rose.png') no-repeat;
+
+    #rose {
+      width: 320px;
+      height: 320px;
+      background: image-url('north.png') no-repeat;
+      transform-origin: 50% 50%;
+      -webkit-transform-origin: 50% 50%;
+
+      #arrow {
+        width: 320px;
+        height: 320px;
+        background: image-url('arrow_green.png') no-repeat;
+        transform-origin: 50% 50%;
+        -webkit-transform-origin: 50% 50%;
+        &.middle {
+          background: image-url('arrow_orange.png') no-repeat;
+        }
+        &.far {
+          background: image-url('arrow_red.png') no-repeat;
+        }
+      }
+    }
+  }
+}
+
+@media 
+(-webkit-min-device-pixel-ratio: 2), 
+(min-resolution: 192dpi) { 
+  #body {
+    #compass {
+      background: image-url('rose_2x.png') no-repeat;
+      background-size: 320px;
+      #rose {
+        background: image-url('north_2x.png') no-repeat;
+        background-size: 320px;
+        #arrow {
+          background: image-url('arrow_2x.png') no-repeat;
+          background-size: 320px;
+        }
+      }
+    }
+  }
+}
+
+#deets {
+  position: absolute;
+  bottom: 0;
+  width: 320px;
+  height: 100px;
+  .inner {
+    padding: 0 10px;
+    h2 {
+      font-weight: bold;
+      font-size: 24px;
+      margin: 0 0 10px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 10px;
+    }
+    .dist {
+      float: left;
+      font-size: 30px;
+      width: 100px;
+    }
+    .racks {
+      color: #888;
+      float: right;
+      font-size: 24px;
+      padding-top: 3px;
+    }
+    span.free {
+      font-weight: bold;
+    }
+  }
+}
+
+#about {
+  display: none;
+  position: absolute;
+  background: #fff;
+  top: 60px;
+  left: 20px;
+  width: 260px;
+  padding: 10px;
+  line-height: 1.4;
+  box-shadow: 3px 3px 5px #ccc;
+
+  a.close {
+    float: right;
+    font-weight: bold;
+    text-decoration: none;
+    color: #888;
+  }
+
+  h1 {
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  p {
+    margin: 0 0 10px;
+  }
+}
+
+.about-toggle {
+  float: right;
+  padding: 40px 5px 0 0;
+  font-weight: bold;
+  text-decoration: none;
+  color: #888;
+}

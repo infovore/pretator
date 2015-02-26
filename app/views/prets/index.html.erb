@@ -1,0 +1,45 @@
+<h1>Prets</h1>
+
+<div id="pret_map"></div>
+
+<table class='table table-striped'>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>pret number</th>
+      <th>name</th>
+      <th>phone_number</th>
+      <th>lat</th>
+      <th>lon</th>
+      <th>seating</th>
+      <th>has_toilets</th>
+      <th>has_wheelchair_access</th>
+      <th>has_wifi</th>
+      <th>has_opened</th>
+      <th>address</th>
+      <th>directions</th>
+      <th>opening_hours</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for pret in @prets %>
+      <tr>
+        <td><%= pret.id %></td>
+        <td><%= pret.pret_number %></td>
+        <td><%= pret.name %></td>
+        <td><%= pret.phone_number %></td>
+        <td><%= pret.lat %></td>
+        <td><%= pret.lon %></td>
+        <td><%= pret.seating %></td>
+        <td><%= pret.has_toilets %></td>
+        <td><%= pret.has_wheelchair_access %></td>
+        <td><%= pret.has_wifi %></td>
+        <td><%= pret.has_opened %></td>
+        <td><%= pret.address %></td>
+        <td><%= pret.directions %></td>
+        <td><%= pret.opening_hours.inspect %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
