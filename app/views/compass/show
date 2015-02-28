@@ -1,0 +1,32 @@
+<div id="body">
+  <div id="compass">
+    <div id="rose">
+      <div id="arrow">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="deets">
+  <div class='inner showracks'>
+    <h2 class="stationname"></h2>
+    <div class="dist">
+    </div>
+
+    <div class="racks">
+      <span class='free'></span> empty racks
+    </div>
+    <span class='clear'><!-- clear --></span>
+  </div>
+  <div class='inner showbikes'>
+    <h2 class="stationname"></h2>
+    <div class="dist">
+    </div>
+
+    <div class="racks">
+      <span class='free'></span> free bikes
+    </div>
+    <span class='clear'><!-- clear --></span>
+  </div>
+</div>
+

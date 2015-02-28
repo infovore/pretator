@@ -19,7 +19,7 @@ class Pret < ActiveRecord::Base
 
   scope :by_proximity, ->(lat,lon) {
     srid = 4326
-    order("ST_Distance(stations.latlon, ST_GeomFromText('POINT (#{lon} #{lat})', #{srid}))")
+    order("ST_Distance(prets.latlon, ST_GeomFromText('POINT (#{lon} #{lat})', #{srid}))")
   }
 
   def to_geo_json
@@ -95,6 +95,14 @@ class Pret < ActiveRecord::Base
   end
 
   # TODO : nearest open
+
+  def self.nearest_open(lat,lon,heading=nil)
+    pret = open.by_proximity(lat,lon).limit(1).first
+    # now decorate that with distance, arc from origin, and offset bearing if
+    # appropriate
+    pret.distance_and_arc = pret.distance_and_arc_from_lonlat_to_pret(lon,lat,heading)
+    pret
+  end
 
   def self.create_or_update_from_hashie(pret_hashie)
     pret = Pret.find_or_initialize_by(:pret_number => pret_hashie.number.to_i)
