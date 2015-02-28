@@ -10,3 +10,9 @@ Pretator is a fairly standard Rails application. It requires PostgresSQL as a da
 
 [postgis]: http://postgis.net/
 [pretadata]: https://github.com/Jonty/pretadata
+
+## Data Ingest
+
+Data is currently included in `/pretadata`. TODO: Tom, explain how to update this. (_I am really stupid with git subtrees_)
+
+Once the `pretadata` repository is in `/pretdata`, running `rake full_ingest` from the application root will delete any existing Prets and store all the latest Prets in PostgresSQL.
