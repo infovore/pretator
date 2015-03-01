@@ -1,5 +1,5 @@
+ruby '1.9.3'
 source 'https://rubygems.org'
-
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
@@ -31,5 +31,10 @@ group :development, :test do
   gem 'spring'
 
   gem 'thin'
+  # Use Capistrano for deployment
+  gem 'capistrano', '~> 3.2.0'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
 end
+
 
