@@ -5,4 +5,6 @@ Rails.application.routes.draw do
     end
   end
   resource :compass, :controller => "compass"
+
+  root "compass#show"
 end
