@@ -11,8 +11,14 @@ $(document).ready(function() {
     return false;
   });
 
+  $(".details-link a").click(function() {
+    $("#full-info").fadeToggle('fast');
+    return false;
+  });
+
   $(".close").click(function() {
     $("#about").fadeOut('fast');
+    $("#full-info").fadeOut('fast');
     return false;
   });
 
@@ -64,6 +70,23 @@ function updateDisplay(data, position) {
   // TODO: update
   $("#deets .inner .info").text(data.name);
   $("#deets").fadeIn();
+
+  var fields = ['address', 'directions', 'has_toilets', 'has_wheelchair_access', 'has_wifi', 'seating'];
+
+  $("#full-info h1").text(data.name);
+  $("#full-info dl").html('');
+
+  $.each(fields, function(i, field) {
+    $("#full-info dl").append("<dt>" + field + "</dt><dd>" + data[field] + "</dd>");
+  });
+
+  var opening_hours = "";
+  var days = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"];
+
+  $.each(days, function(i, day) {
+    opening_hours = opening_hours + day + ": " + data.opening_hours[day] + "<br/>";
+  });
+  $("#full-info dl").append("<dt>Opening hours</dt><dd>" + opening_hours + "</dd>");
 
   updateCompass(data, position);
 }

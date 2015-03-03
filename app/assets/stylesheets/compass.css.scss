@@ -106,9 +106,15 @@ body {
       font-weight: bold;
     }
   }
+  .info {
+    float: left;
+  }
+  .details-link {
+    float: right;
+  }
 }
 
-#about {
+#about, #full-info {
   display: none;
   position: absolute;
   background: #fff;
@@ -134,6 +140,11 @@ body {
   p {
     margin: 0 0 10px;
   }
+  dl {
+    dt {
+      font-weight: bold;
+    }
+  }
 }
 
 .about-toggle {
@@ -143,3 +154,4 @@ body {
   text-decoration: none;
   color: #888;
 }
+
