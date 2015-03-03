@@ -71,7 +71,7 @@ function updateDisplay(data, position) {
   $("#deets .inner .info").text(data.name);
   $("#deets").fadeIn();
 
-  var fields = ['address', 'directions', 'has_toilets', 'has_wheelchair_access', 'has_wifi', 'seating'];
+  var fields = ['address', 'directions', 'seating'];
 
   $("#full-info h1").text(data.name);
   $("#full-info dl").html('');
