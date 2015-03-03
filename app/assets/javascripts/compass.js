@@ -36,6 +36,21 @@ $(document).ready(function() {
         navigator.geolocation.getCurrentPosition(function(position) {
           updateCompass(position);
         });
+      } else {
+        //window.compassHeading = e.alpha + window.orientation;
+        alpha = event.alpha;
+        webkitAlpha = alpha;
+        if(!window.chrome) {
+          //Assume Android stock (this is crude, but good enough for our example) and apply offset
+          webkitAlpha = alpha-270;
+        }
+        $("#rose").css('transform', 'rotate(' + alpha + 'deg)');
+        $("#rose").css('-webkit-transform', 'rotate(' + wbekitAlpha + 'deg)');
+        $("#rose").css('-moz-transform', 'rotate(' + alpha + 'deg)');
+
+        navigator.geolocation.getCurrentPosition(function(position) {
+          updateCompass(position);
+        });
       }
     });
   }
