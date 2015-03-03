@@ -1,5 +1,5 @@
 # config valid only for Capistrano 3.1
-lock '3.2.0'
+#lock '3.2.0'
 
 set :application, 'pretator'
 set :repo_url, 'git@github.com:infovore/pretator.git'
@@ -45,3 +45,10 @@ namespace :deploy do
     end
   end
 end
+
+# rbenv stuff
+
+set :rbenv_type, :system
+set :rbenv_custom_path, '/usr/local/rbenv'
+set :rbenv_ruby, '1.9.3-p547'
+

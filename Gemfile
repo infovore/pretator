@@ -32,9 +32,11 @@ group :development, :test do
 
   gem 'thin'
   # Use Capistrano for deployment
-  gem 'capistrano', '~> 3.2.0'
+  gem 'capistrano', '~> 3.3.0'
+  
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
 end
 
 
