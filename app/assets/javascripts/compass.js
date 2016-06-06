@@ -45,7 +45,7 @@ $(document).ready(function() {
           webkitAlpha = alpha-270;
         }
         $("#rose").css('transform', 'rotate(' + alpha + 'deg)');
-        $("#rose").css('-webkit-transform', 'rotate(' + wbekitAlpha + 'deg)');
+        $("#rose").css('-webkit-transform', 'rotate(' + webkitAlpha + 'deg)');
         $("#rose").css('-moz-transform', 'rotate(' + alpha + 'deg)');
 
         navigator.geolocation.getCurrentPosition(function(position) {
